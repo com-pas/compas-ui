@@ -1,0 +1,40 @@
+{
+  "name": "@com-pas/compas",
+  "version": "0.0.1",
+  "description": "A bottom-up substation configuration designer for projects described using SCL `IEC 61850-6` Edition 2 or greater.",
+  "workspaces": [
+    "packages/*",
+    "addons/*",
+    "plugins/*",
+    "components/*"
+  ],
+  "scripts": {
+    "serve": "lerna run serve",
+    "copy": "lerna run copy",
+    "build": "lerna run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/com-pas/compas-ui.git"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "lerna": "^7.0.2"
+  },
+  "keywords": [
+    "CoMPAS",
+    "IEC61850",
+    "SCL",
+    "substation configuration",
+    "IEC",
+    "61850-6",
+    "SCD",
+    "editor"
+  ],
+  "author": "CoMPAS",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/com-pas/compas-ui/issues"
+  },
+  "homepage": "https://github.com/com-pas/compas-ui#readme"
+}

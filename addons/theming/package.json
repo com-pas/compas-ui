@@ -1,0 +1,36 @@
+{
+    "name": "@com-pas/cmp-theming",
+    "version": "0.0.1",
+    "description": "Theming Addon for CoMPAS",
+    "type": "module",
+    "scripts": {
+        "build": "tsc",
+        "move": "copyfiles dist/* ../../packages/ui/addons/theming -u 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/com-pas/compas-ui.git"
+    },
+    "devDependencies": {
+        "copyfiles": "^2.4.1"
+    },
+    "dependencies": {
+        "@com-pas/compas-ui": "*"
+    },
+    "keywords": [
+        "CoMPAS",
+        "IEC61850",
+        "SCL",
+        "substation configuration",
+        "IEC",
+        "61850-6",
+        "SCD",
+        "editor"
+    ],
+    "author": "CoMPAS",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/com-pas/compas-ui/issues"
+    },
+    "homepage": "https://github.com/com-pas/compas-ui#readme"
+}

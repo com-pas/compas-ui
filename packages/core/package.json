@@ -1,0 +1,131 @@
+{
+  "name": "@com-pas/core",
+  "version": "1.0.1",
+  "description": "The core editor component of CoMPAS UI, without any extensions pre-installed.",
+  "author": "CoMPAS",
+  "license": "Apache-2.0",
+  "packageManager": "npm@8.12.2",
+  "type": "module",
+  "browser": "./dist/foundation.js",
+  "main": "./dist/foundation.js",
+  "types": "./dist/foundation.d.ts",
+  "files": [
+    "./dist/**"
+  ],
+  "exports": {
+    ".": "./dist/foundation.js"
+  },
+  "scripts": {
+    "deploy": "npm run bundle && gh-pages --dist 'dist'",
+    "build": "npm run compile",
+    "compile": "tsc -b",
+    "bundle": "rimraf dist && rollup -c rollup.config.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-tsdoc": "^0.2.16",
+    "fast-check": "^3.1.1",
+    "gh-pages": "^4.0.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "tsdoc": "^0.0.4",
+    "tslib": "^2.4.0",
+    "typedoc": "^0.23.8",
+    "typescript": "^4.7.4"
+  },
+  "customElements": "custom-elements.json",
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "lib": [
+        "es2018",
+        "dom"
+      ]
+    },
+    "extends": [
+      "@open-wc",
+      "prettier"
+    ],
+    "plugins": [
+      "@typescript-eslint",
+      "eslint-plugin-tsdoc"
+    ],
+    "rules": {
+      "no-unused-vars": "off",
+      "sort-imports": [
+        "error",
+        {
+          "ignoreCase": true,
+          "allowSeparatedGroups": true
+        }
+      ],
+      "class-methods-use-this": [
+        "error",
+        {
+          "exceptMethods": [
+            "locale"
+          ]
+        }
+      ],
+      "@typescript-eslint/no-explicit-any": [
+        "error",
+        {
+          "ignoreRestArgs": true
+        }
+      ],
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": [
+            "**/*.test.ts",
+            "**/*.spec.ts"
+          ]
+        }
+      ],
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          "argsIgnorePattern": "^_",
+          "varsIgnorePattern": "^_",
+          "destructuredArrayIgnorePattern": "^_"
+        }
+      ],
+      "import/no-unresolved": "off",
+      "import/extensions": [
+        "error",
+        "always",
+        {
+          "ignorePackages": true
+        }
+      ]
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/*.spec.ts"
+        ],
+        "rules": {
+          "no-unused-expressions": "off"
+        }
+      }
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "avoid"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}
